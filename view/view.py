@@ -1,10 +1,26 @@
 import tkinter
 from PIL import Image, ImageTk
 
+
 class P9verbals:
     bg='#3d6466'
 
+def load_frame1():
+    print('bag of dicks')
+    
+    #importCSV('P5TestPlan.csv')
+   
+def load_frame2():
+    test = Model('pop', 1995)
+    sup = test.getAll()
+    print(sup['date'])
 
+def load_frame3():
+    print('butts')
+
+def place_holder():
+    pass
+    
 def load_main(frame, image):   
     frame.pack_propagate(False)
     bace_image = Image.open(image)
@@ -25,9 +41,14 @@ def load_main(frame, image):
 def main():
     root = tkinter.Tk()
     root.title('Hello')
-
     #root.eval('tk::PlaceWindow . center')
-    
+    menu_bar = tkinter.Menu(root)
+    file_menu = tkinter.Menu(menu_bar, tearoff=0)
+
+    file_menu.add_separator()
+    menu_bar.add_cascade(label="File", menu=file_menu)
+    file_menu.add_command(label="testk", command=place_holder)
+    file_menu.add_command(label="testl", command=place_holder)
 
     x = int(root.winfo_screenwidth() // 2)
     y = int(root.winfo_screenheight() * 0.1)
