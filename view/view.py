@@ -24,9 +24,10 @@ def place_holder():
 def load_main(frame, image):   
     frame.pack_propagate(False)
     bace_image = Image.open(image)
-    print('dd')
+
+
     #rezized_image = bace_image.resize((341,256))
-    print('d')
+    
     rezized_image = Image.open(image).resize((200,200))
     logo_img = ImageTk.PhotoImage(rezized_image)
     #logo_widget = tkinter.Label(frame, image = logo_img).image = logo_img
@@ -38,10 +39,8 @@ def load_main(frame, image):
     tkinter.Button(frame, text = 'bob', font=('TkMenuFont', 14), bg = P9verbals.bg, fg = 'white', cursor = 'hand2', activeforeground = 'red', activebackground = 'blue', command =lambda: load_frame2()).pack(pady= 20)
     tkinter.Button(frame, text = 'sam', font=('TkMenuFont', 14), bg = P9verbals.bg, fg = 'white', cursor = 'hand2', activeforeground = 'red', activebackground = 'blue', command =lambda: load_frame3()).pack(pady= 20)
 
-def main():
-    root = tkinter.Tk()
-    root.title('Hello')
-    #root.eval('tk::PlaceWindow . center')
+def menu_bar(root):
+    print('fail')
     menu_bar = tkinter.Menu(root)
     file_menu = tkinter.Menu(menu_bar, tearoff=0)
 
@@ -49,6 +48,17 @@ def main():
     menu_bar.add_cascade(label="File", menu=file_menu)
     file_menu.add_command(label="testk", command=place_holder)
     file_menu.add_command(label="testl", command=place_holder)
+
+    
+    return(menu_bar)
+
+def main():
+    root = tkinter.Tk()
+    root.title('Hello')
+    
+    
+    
+    root.config(menu=menu_bar(root))
 
     x = int(root.winfo_screenwidth() // 2)
     y = int(root.winfo_screenheight() * 0.1)
